@@ -4,8 +4,7 @@ import styles from './page.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
 
-
-export const ShoppingCar = () => {
+const ShoppingCar:any = () =>{
   const data = useSelector((state: any) => state.user);
 
   return (
@@ -32,3 +31,4 @@ export const ShoppingCar = () => {
       </div>
     </Link>
 )}
+export default ShoppingCar;

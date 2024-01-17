@@ -4,9 +4,9 @@ import styles from './page.module.scss'
 import { ProductsInterface } from '@/app/lib/data/interfaces';
 import { removeProduct, sumTotal } from '@/provider/redux/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { Products } from '../Products/page';
+import Products from '../Products/page';
 
-export const SelectedProduct = () =>{
+const SelectedProduct:any = () =>{
   const [products, setProducts] = useState<ProductsInterface[]>();
 
   const data = useSelector((state: any) => state.user.products);
@@ -47,3 +47,4 @@ export const SelectedProduct = () =>{
       />
     </div>
 )}
+export default SelectedProduct

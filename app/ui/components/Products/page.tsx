@@ -10,8 +10,9 @@ interface props {
   title?: string,
   action: 'add' | 'remove'
 }
+const Products:any = ({products, title, action}: props) =>{
 
-export const Products:FC<props> = ({products, title, action}) =>{
+// export const Products:FC<props> = ({products, title, action}) =>{
   const dispatch =  useDispatch();
   const data = useSelector((state: any) => state.user.products);
 
@@ -62,3 +63,5 @@ export const Products:FC<props> = ({products, title, action}) =>{
       ))}
     </div>
 )}
+
+export default Products;

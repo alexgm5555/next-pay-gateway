@@ -1,14 +1,13 @@
 
 import styles from './page.module.css'
-import { Products } from '../Products/page';
+import Products from '../Products/page';
 import { ProductsInterface } from '@/app/lib/data/interfaces';
-import { NextPage } from 'next';
 
 interface props {
-  products?: ProductsInterface[];
+  products: ProductsInterface[];
 }
 
-const AllProducts:NextPage<props> = ({products}) =>{
+const AllProducts:any = ({products}: props) =>{
 
   return (
     <div className={`${styles['ListProducts-container']}`}>

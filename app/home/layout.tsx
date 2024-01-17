@@ -1,11 +1,9 @@
 import { Suspense } from 'react';
 import { findAllProducts } from '../lib/data';
-import {
-  AllProducts,
-  SelectedProduct,
-  ShoppingCar
- } from '../ui/components';
+
 import styles from './page.module.scss'
+import SelectedProduct from '../ui/components/SelectedProduct/page';
+import ShoppingCar from '../ui/components/ShoppingCar/page';
 
 export default async function HomeLayout({
   children,
