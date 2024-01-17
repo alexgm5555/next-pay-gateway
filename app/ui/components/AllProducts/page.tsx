@@ -7,8 +7,7 @@ import { FC } from 'react';
 interface props {
   products?: ProductsInterface[];
 }
-
-export const AllProducts:FC<props> = ({products}) =>{
+export default async function AllProducts({products}:props) {
 
   return (
     <div className={`${styles['ListProducts-container']}`}>
