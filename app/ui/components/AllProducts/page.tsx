@@ -4,10 +4,9 @@ import { Products } from '../Products/page';
 import { ProductsInterface } from '@/app/lib/data/interfaces';
 import { FC } from 'react';
 
-interface props {
+export default async function AllProducts({products}:{
   products?: ProductsInterface[];
-}
-export default async function AllProducts({products}:props) {
+}) {
 
   return (
     <div className={`${styles['ListProducts-container']}`}>
