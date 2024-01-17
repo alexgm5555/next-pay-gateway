@@ -43,15 +43,20 @@ export const Products:FC<props> = ({products, title, action}) =>{
         <div
           key={product.id}
           onClick={()=>handleClick(product)}
-          className='item'
+          className={`${styles['item']}`}
           title={title}
           data-testid={`item${product.id}`}
         >
           <p className={`${styles['pItem']}`}> {product.name}</p>
+          <img 
+            className={`${styles['img-car']}`}
+            src={product.thumbnail}
+            alt="Add to car"
+          />
           <p> {product.description}</p>
           <p> ${product.cost}</p>
           {product.quantity && <p> 
-            Quatity: {product.quantity}
+            Quantity: {product.quantity}
           </p>}
         </div>
       ))}
