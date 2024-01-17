@@ -4,6 +4,7 @@ export default async function Payment() {
   
   return (
   <div className={`${styles['Main-container']}`}>
-    payment
+    We need more some of your information. 
+    <input type="text" />
   </div>
 )}

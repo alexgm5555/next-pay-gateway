@@ -2,13 +2,12 @@
 import styles from './page.module.css'
 import { Products } from '../Products/page';
 import { ProductsInterface } from '@/app/lib/data/interfaces';
-import { FC } from 'react';
 
 interface props {
   products?: ProductsInterface[];
 }
 
-export const AllProducts:FC<props> = ({products}) =>{
+const AllProducts:React.FC<props> = ({products}) =>{
 
   return (
     <div className={`${styles['ListProducts-container']}`}>
@@ -20,3 +19,5 @@ export const AllProducts:FC<props> = ({products}) =>{
     </div>
 
 )}
+
+export default AllProducts;

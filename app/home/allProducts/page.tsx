@@ -1,8 +1,6 @@
 import { Suspense } from 'react';
 import { findAllProducts } from '../../lib/data';
-import {
-  AllProducts,
- } from '../../ui/components';
+import AllProducts from '../../ui/components/AllProducts/page';
 import styles from './page.module.css'
 
 export default async function Allproducts() {
