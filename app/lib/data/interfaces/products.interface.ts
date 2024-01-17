@@ -5,4 +5,5 @@ export interface ProductsInterface {
   description: string,
   cost: string,
   quantity?: number,
+  thumbnail: string
 }

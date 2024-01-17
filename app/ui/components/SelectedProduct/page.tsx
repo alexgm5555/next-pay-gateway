@@ -1,6 +1,6 @@
 'use client'
 import { FC, useEffect, useState } from 'react';
-import styles from './page.module.css'
+import styles from './page.module.scss'
 import { ProductsInterface } from '@/app/lib/data/interfaces';
 import { removeProduct, sumTotal } from '@/provider/redux/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
