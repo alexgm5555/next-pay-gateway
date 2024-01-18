@@ -1,14 +1,13 @@
 
 import styles from './page.module.css'
 import Products from '../Products/page';
-import { ProductsInterface } from '@/app/lib/data/interfaces';
+import { ProductsInterface } from '@/app/lib/interfaces';
 
 interface props {
   products: ProductsInterface[];
 }
 
 const AllProducts:any = ({products}: props) =>{
-
   return (
     <div className={`${styles['ListProducts-container']}`}>
     <Products
@@ -17,7 +16,6 @@ const AllProducts:any = ({products}: props) =>{
         action='add'
     />
     </div>
-
 )}
 
 export default AllProducts;

@@ -1,7 +1,6 @@
-'use client'
-import { FC } from 'react';
 import styles from './page.module.css'
-import { ProductsInterface } from '@/app/lib/data/interfaces';
+import { ProductsInterface } from '@/app/lib/interfaces';
+import { formatMoney } from '@/app/lib/util/formatMoney';
 import { addProduct, removeProduct } from '@/provider/redux/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -11,8 +10,6 @@ interface props {
   action: 'add' | 'remove'
 }
 const Products:any = ({products, title, action}: props) =>{
-
-// export const Products:FC<props> = ({products, title, action}) =>{
   const dispatch =  useDispatch();
   const data = useSelector((state: any) => state.user.products);
 
@@ -55,7 +52,7 @@ const Products:any = ({products, title, action}: props) =>{
             alt="Add to car"
           />
           <p> {product.description}</p>
-          <p> ${product.cost}</p>
+          <p> {formatMoney(+product.cost)}</p>
           {product.quantity && <p> 
             Quantity: {product.quantity}
           </p>}

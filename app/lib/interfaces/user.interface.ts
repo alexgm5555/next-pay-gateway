@@ -4,5 +4,6 @@ export interface UserInterface {
   name: string,
   email: string,
   products?: ProductsInterface[],
-  total?: string
+  total?: number,
+  idTran?: string,
 }

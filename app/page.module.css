@@ -1,7 +1,9 @@
 html, body, #root {
   height: 100%;
+  background: black !important;
 }
 .main {
+  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -1,11 +1,18 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import { redirect } from 'next/navigation';
+'use client'
+import { Suspense } from 'react';
+import { findAllProducts } from './lib/data';
+import HomeLayout from './ui/layouts/HomeLayout/page';
+import AllProducts from './ui/components/AllProducts/page';
 
-export default function Main() {
-  redirect('/home/allProducts')
+export default async function Main() {
+  const products = await findAllProducts();
   return (
     <main>
+      <HomeLayout>
+        <Suspense fallback={<>cargando</>}>
+          <AllProducts products={products}></AllProducts>
+        </Suspense>
+      </HomeLayout>
     </main>
   )
 }

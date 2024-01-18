@@ -1,12 +1,16 @@
-import { UserInterface } from '@/app/lib/data/interfaces';
+import { UserInterface } from '@/app/lib/interfaces';
+import { getHashPayment } from '@/app/lib/util/getHashPayment';
 import { createSlice } from '@reduxjs/toolkit';
+import { v4 as uuid } from 'uuid';
+
 
 
 const initialState: UserInterface = {
   name: "",
   email: "",
   products: [],
-  total: '0.0'
+  total: 0,
+  idTran: ''
 }
 
 export const userSlice = createSlice({
@@ -28,6 +32,11 @@ export const userSlice = createSlice({
     sumTotal: (state, action) => {
       const { total } = action.payload;
       state.total = total;
+      state.idTran = uuid();
+    },
+    addidTran: (state, action) => {
+      const { id } = action.payload;
+      state.idTran = id;
     },
   }
 });
@@ -36,6 +45,7 @@ export const {
   userRegister,
   addProduct,
   removeProduct,
-  sumTotal
+  sumTotal,
+  addidTran
 } = userSlice.actions;
 export default userSlice.reducer;

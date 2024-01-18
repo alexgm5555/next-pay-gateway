@@ -1,8 +1,8 @@
 'use client'
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './page.module.scss'
-import { ProductsInterface } from '@/app/lib/data/interfaces';
-import { removeProduct, sumTotal } from '@/provider/redux/userSlice';
+import { ProductsInterface } from '@/app/lib/interfaces';
+import { sumTotal } from '@/provider/redux/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Products from '../Products/page';
 
@@ -11,8 +11,6 @@ const SelectedProduct:any = () =>{
 
   const data = useSelector((state: any) => state.user.products);
   const dispatch =  useDispatch();
-  console.log(data);
-
 
   const sortPerQuatity = (arrayOld: ProductsInterface[]) => {
     const arrayNew: ProductsInterface[] = [];
@@ -24,7 +22,6 @@ const SelectedProduct:any = () =>{
     return arrayNew;
   }
 
-
   useEffect(() => {
     setProducts(sortPerQuatity(data));
     
@@ -33,7 +30,7 @@ const SelectedProduct:any = () =>{
       result += parseFloat(data[i].cost) ;
     }
     dispatch(sumTotal({
-      total: result.toString()
+      total: result
     }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
@@ -47,4 +44,5 @@ const SelectedProduct:any = () =>{
       />
     </div>
 )}
-export default SelectedProduct
+
+export default SelectedProduct;
